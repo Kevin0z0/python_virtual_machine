@@ -15,6 +15,7 @@ public:
 private:
     ArrayList<Object*> *_stack;
     ArrayList<Object*> *_consts;
+    ArrayList<Object*> *_names;
 };
 
 

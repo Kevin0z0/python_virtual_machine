@@ -3,6 +3,7 @@
  */
 #ifndef CPP_ARRAYLIST_HPP
 #define CPP_ARRAYLIST_HPP
+#include <cstdio>
 
 template <typename T>
 class ArrayList {

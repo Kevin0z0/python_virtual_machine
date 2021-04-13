@@ -4,6 +4,7 @@
 
 #ifndef CPP_MAP_HPP
 #define CPP_MAP_HPP
+
 template <typename K, typename V>
 class MapEntry{
 public:
@@ -25,9 +26,10 @@ private:
     void expand();
 public:
     Map();
+    explicit Map(int size);
 
     int size(){return _size;}
-    void put(K key, V value);
+    void set(K key, V value);
     V get(K key);
     K getKey(int index);
     bool hasKey(K key);
@@ -35,6 +37,5 @@ public:
     int index(K key);
     MapEntry<K, V> *entries(){ return _entries; }
 };
-
 
 #endif //CPP_MAP_HPP

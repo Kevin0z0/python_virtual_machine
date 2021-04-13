@@ -6,6 +6,7 @@
 #define CPP_INTEGER_HPP
 #include "Object.hpp"
 #include <iostream>
+
 class Integer : public Object{
 private:
     int _value;
@@ -18,6 +19,7 @@ public:
     Object *greater(Object *x) override;
     Object *less(Object *x) override;
     Object *equal(Object *x) override;
+    Object *not_equal(Object *x) override;
     Object *ge(Object *x) override;
     Object *le(Object *x) override;
 

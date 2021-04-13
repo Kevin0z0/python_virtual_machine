@@ -190,9 +190,9 @@ String *BinaryFileParser::getString() {
 }
 
 BinaryFileParser::~BinaryFileParser() {
-    if(fileStream){
-        delete fileStream;
-    }
+//    if(fileStream){
+//        delete fileStream;
+//    }
 }
 
 

@@ -4,8 +4,6 @@
 
 #ifndef CPP_UNIVERSE_HPP
 #define CPP_UNIVERSE_HPP
-
-
 #include "../object/Integer.hpp"
 
 class Universe {

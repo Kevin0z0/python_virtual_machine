@@ -3,7 +3,16 @@
 #include "utils/BufferedInputStream.hpp"
 #include "object/String.hpp"
 #include "code/BinaryFileParser.hpp"
+
 #include "runtime/Interpreter.hpp"
+
+void printByte(const std::string &str, String *s) {
+    std::cout << str;
+    for(int i = 0; i < s->length(); i++){
+        printf("%x",s->value()[i]);
+    }
+    printf("\n");
+}
 
 void print(const std::string &str, String *s) {
     std::cout << str << *s << std::endl;
@@ -14,8 +23,7 @@ void print(const std::string &str, ArrayList<Object *> *a) {
     int len = a->length();
     for (int i = 0; i < len; i++) {
         a->get(i)->print();
-        if(i != len - 1)
-            printf(", ");
+        if(i != len - 1) printf(", ");
     }
     printf(")\n");
 }
@@ -25,7 +33,7 @@ void printInfo(CodeObject* mainCode){
     printf("nLocals: %d\n", mainCode->_nLocals);
     printf("stackSize: %d\n", mainCode->_stackSize);
     printf("flags: 0x%x\n", mainCode->_flag);
-    print("bytecodes: ", mainCode->_bytecodes);
+    printByte("bytecodes: ", mainCode->_bytecodes);
     print("consts: ", mainCode->_consts);
     print("names: ", mainCode->_names);
     print("varNames: ", mainCode->_varNames);
@@ -36,12 +44,12 @@ void printInfo(CodeObject* mainCode){
 }
 
 int main() {
-    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_var.pyc)";
+    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_loop.pyc)";
     BufferedInputStream stream(path);
     BinaryFileParser bfp(&stream);
     CodeObject *mainCode = bfp.parse();
     printInfo(mainCode);
-//    Interpreter interpreter{};
-//    interpreter.run(mainCode);
+    Interpreter interpreter{};
+    interpreter.run(mainCode);
     return 0;
 }

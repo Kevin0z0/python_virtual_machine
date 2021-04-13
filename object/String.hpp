@@ -23,6 +23,8 @@ public:
     u_int length() const {return _length;}
     void print() override;
 
+    Object *equal(Object *x) override;
+
     friend std::ostream& operator<<(std::ostream &os, String &s){
         for(int i = 0; i < s._length; i++){
             std::cout << s._value[i];

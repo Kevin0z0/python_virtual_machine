@@ -3,6 +3,7 @@
 //
 
 #include "String.hpp"
+#include "../runtime/Universe.hpp"
 #include <cstring>
 
 String::String(const char *x, const int length): _length(length) {
@@ -23,4 +24,10 @@ void String::print() {
         std::cout << _value[i];
     }
 //    std::cout << std::endl;
+}
+
+Object *String::equal(Object* x) {
+    if(_value == ((String*)x)->_value)
+        return Universe::True;
+    return Universe::False;
 }

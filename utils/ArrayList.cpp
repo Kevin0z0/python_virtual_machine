@@ -1,7 +1,7 @@
 /**
  * Created by zkw on 2021-04-09.
  */
-#include "cstdio"
+
 #include "ArrayList.hpp"
 
 template<typename T>
@@ -78,7 +78,7 @@ void ArrayList<T>::print() {
 
 template<typename T>
 ArrayList<T>::~ArrayList() {
-    if(_array){
-        delete _array;
-    }
+//    if(_array){
+//        delete _array;
+//    }
 }

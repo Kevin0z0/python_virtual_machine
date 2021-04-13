@@ -33,6 +33,12 @@ Object *Integer::equal(Object *x) {
     return Universe::False;
 }
 
+Object *Integer::not_equal(Object *x) {
+    if(_value != ((Integer*)x)->_value)
+        return Universe::True;
+    return Universe::False;
+}
+
 Object *Integer::ge(Object *x) {
     if(_value >= ((Integer*)x)->_value)
         return Universe::True;
@@ -44,3 +50,5 @@ Object *Integer::le(Object *x) {
         return Universe::True;
     return Universe::False;
 }
+
+

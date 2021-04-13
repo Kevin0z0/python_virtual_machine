@@ -6,6 +6,7 @@
 #include "../code/ByteCode.hpp"
 #include "../object/Integer.hpp"
 #include "../runtime/Universe.hpp"
+#include "../utils/Map.hpp"
 
 #define PUSH(x) _stack->add((x))
 #define POP() _stack->pop()
@@ -16,12 +17,15 @@ void Interpreter::run(CodeObject *codes) {
 
     _stack = new ArrayList<Object*>(codes->_stackSize);
     _consts = codes->_consts;
+    _names = codes->_names;
+
+    Map<Object*, Object*> map(_names->size());
 
     while(pc < codeLength){
         unsigned char opCode = codes->_bytecodes->value()[pc++];
-        bool hasArgment = (opCode & 0xff) >= ByteCode::HAVE_ARGUMENT;
+        bool hasArgument = (opCode & 0xff) >= ByteCode::HAVE_ARGUMENT;
         int opArg = -1;
-        if(hasArgment){
+        if(hasArgument){
             int byte1 = (codes->_bytecodes->value()[pc++] & 0xff);
             opArg = ((codes->_bytecodes->value()[pc++] & 0xff) << 8) | byte1;
         }
@@ -39,6 +43,7 @@ void Interpreter::run(CodeObject *codes) {
                 printf("\n");
                 break;
             case ByteCode::BINARY_ADD:
+            case ByteCode::INPLACE_ADD:
                 v = POP();
                 w = POP();
                 PUSH(w->add(v));
@@ -78,8 +83,21 @@ void Interpreter::run(CodeObject *codes) {
                 if(v == Universe::False)
                     pc = opArg;
                 break;
+            case ByteCode::STORE_NAME:
+                map.set(_names->get(opArg), POP());
+                break;
+            case ByteCode::LOAD_NAME:
+                PUSH(map.get(_names->get(opArg)));
+                break;
             case ByteCode::JUMP_FORWARD:
                 pc += opArg;
+                break;
+            case ByteCode::JUMP_ABSOLUTE:
+                pc = opArg;
+                break;
+            case ByteCode::SETUP_LOOP:
+                break;
+            case ByteCode::POP_BLOCK:
                 break;
             default:
                 printf("Error: Unrecognized byte code %x\n", opCode);
