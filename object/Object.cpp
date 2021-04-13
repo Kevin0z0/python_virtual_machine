@@ -3,13 +3,14 @@
 //
 
 #include "Object.hpp"
+#include "cstdio"
 
 Object *Object::add(Object *x) {
     return nullptr;
 }
 
 void Object::print() {
-
+    printf("None");
 }
 
 Object *Object::ge(Object *x) {

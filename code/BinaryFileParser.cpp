@@ -4,11 +4,13 @@
 #include "iostream"
 #include "BinaryFileParser.hpp"
 #include "../object/Integer.hpp"
+#include "../runtime/Universe.hpp"
 #include <cassert>
 
 BinaryFileParser::BinaryFileParser(BufferedInputStream *stream): fileStream(stream){}
 
 CodeObject *BinaryFileParser::parse() {
+    Universe::genesis();
     int magicNumber = fileStream->read_int();
     printf("magic number is 0x%x\n", magicNumber);
     int modDate = fileStream->read_int();
@@ -86,7 +88,7 @@ ArrayList<Object *> *BinaryFileParser::getTuple() {
                 list->add(new Integer(fileStream->read_int()));
                 break;
             case 'N':
-                list->add(NULL);
+                list->add(Universe::None);
                 break;
             case 't':
                 str = getString();

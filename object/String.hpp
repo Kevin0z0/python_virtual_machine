@@ -21,6 +21,7 @@ public:
 
     const char *value() {return _value;}
     u_int length() const {return _length;}
+    void print() override;
 
     friend std::ostream& operator<<(std::ostream &os, String &s){
         for(int i = 0; i < s._length; i++){
