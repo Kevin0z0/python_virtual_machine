@@ -10,14 +10,17 @@
 
 #define PUSH(x) _stack->add((x))
 #define POP() _stack->pop()
+#define STACK_LEVEL() _stack->size()
 
 void Interpreter::run(CodeObject *codes) {
-    int pc = 0;
+    unsigned int pc = 0;
     unsigned int codeLength = codes->_bytecodes->length();
 
     _stack = new ArrayList<Object*>(codes->_stackSize);
+    _loopStack = new ArrayList<Block*>{};
     _consts = codes->_consts;
     _names = codes->_names;
+
 
     Map<Object*, Object*> map(_names->size());
 
@@ -31,6 +34,7 @@ void Interpreter::run(CodeObject *codes) {
         }
         Integer *lhs, *rhs;
         Object *v, *w, *u, *attr;
+        Block *b;
         switch (opCode) {
             case ByteCode::LOAD_CONST:
                 PUSH(_consts->get(opArg));
@@ -96,11 +100,25 @@ void Interpreter::run(CodeObject *codes) {
                 pc = opArg;
                 break;
             case ByteCode::SETUP_LOOP:
+                _loopStack->add(new Block(
+                    opCode,
+                    pc + opArg,
+                    STACK_LEVEL()
+                ));
                 break;
             case ByteCode::POP_BLOCK:
+                b = _loopStack->pop();
+                while(STACK_LEVEL() > b->_level)
+                    POP();
+                break;
+            case ByteCode::BREAK_LOOP:
+                b = _loopStack->pop();
+                while (STACK_LEVEL() > b->_level)
+                    POP();
+                pc = b->_target;
                 break;
             default:
-                printf("Error: Unrecognized byte code %x\n", opCode);
+                printf("Error: Unrecognized byte code %d\n", opCode);
         }
     }
 }

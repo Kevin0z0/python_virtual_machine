@@ -44,12 +44,12 @@ void printInfo(CodeObject* mainCode){
 }
 
 int main() {
-    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_loop.pyc)";
+    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_func.pyc)";
     BufferedInputStream stream(path);
     BinaryFileParser bfp(&stream);
     CodeObject *mainCode = bfp.parse();
     printInfo(mainCode);
-    Interpreter interpreter{};
-    interpreter.run(mainCode);
+//    Interpreter interpreter{};
+//    interpreter.run(mainCode);
     return 0;
 }

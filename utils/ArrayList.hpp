@@ -33,4 +33,7 @@ template class ArrayList<Object*>;
 
 class String;
 template class ArrayList<String*>;
+
+class Block;
+template class ArrayList<Block*>;
 #endif //CPP_ARRAYLIST_HPP
