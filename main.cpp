@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include "utils/BufferedInputStream.hpp"
-#include "object/String.hpp"
+//#include "object/String.hpp"
 #include "code/BinaryFileParser.hpp"
 
 #include "runtime/Interpreter.hpp"
@@ -15,7 +15,9 @@ void printByte(const std::string &str, String *s) {
 }
 
 void print(const std::string &str, String *s) {
-    std::cout << str << *s << std::endl;
+    std::cout << str;
+    s->print();
+    printf("\n");
 }
 
 void print(const std::string &str, ArrayList<Object *> *a) {
@@ -44,12 +46,12 @@ void printInfo(CodeObject* mainCode){
 }
 
 int main() {
-    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_func.pyc)";
+    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_var.pyc)";
     BufferedInputStream stream(path);
     BinaryFileParser bfp(&stream);
     CodeObject *mainCode = bfp.parse();
     printInfo(mainCode);
-//    Interpreter interpreter{};
-//    interpreter.run(mainCode);
+    Interpreter interpreter{};
+    interpreter.run(mainCode);
     return 0;
 }

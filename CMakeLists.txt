@@ -23,6 +23,6 @@ add_executable(
         runtime/Universe.hpp
         utils/Map.cpp
         utils/Map.hpp
-)
+        object/Klass.cpp object/Klass.hpp object/String.cpp object/String.hpp)
 
 include_directories(./)

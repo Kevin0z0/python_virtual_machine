@@ -5,50 +5,164 @@
 #include "Integer.hpp"
 #include "../runtime/Universe.hpp"
 
-Integer::Integer(int x) : _value(x) {}
+IntegerKlass *IntegerKlass::instance = nullptr;
+IntegerKlass::IntegerKlass() = default;
 
-Object *Integer::add(Object *x) {
-    return new Integer(_value + ((Integer*)x)->value());
+IntegerKlass *IntegerKlass::getInstance() {
+    if(instance == nullptr)
+        instance = new IntegerKlass();
+    return instance;
 }
 
-void Integer::print() {
-    printf("%d",_value);
+Integer::Integer(int x) : _value(x) {
+    setKlass(IntegerKlass::getInstance());
 }
 
-Object *Integer::greater(Object *x) {
-    if(_value > ((Integer*)x)->_value)
+Object *IntegerKlass::add(Object *x, Object *y) {
+    auto *ix = (Integer*) x;
+    auto *iy = (Integer*) y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    return new Integer(ix->value() + iy->value());
+}
+
+Object *IntegerKlass::greater(Object *x, Object *y) {
+    if(x->klass() != y->klass())
+        return Universe::False;
+
+    auto *ix = (Integer *)x;
+    auto *iy = (Integer *)y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    if(ix->value() > iy->value())
         return Universe::True;
     return Universe::False;
 }
 
-Object *Integer::less(Object *x) {
-    if(_value < ((Integer*)x)->_value)
+Object *IntegerKlass::less(Object *x, Object *y) {
+    if(x->klass() != y->klass())
+        return Universe::False;
+
+    auto *ix = (Integer *)x;
+    auto *iy = (Integer *)y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    if(ix->value() < iy->value())
         return Universe::True;
     return Universe::False;
 }
 
-Object *Integer::equal(Object *x) {
-    if(_value == ((Integer*)x)->_value)
+Object *IntegerKlass::equal(Object *x, Object *y) {
+    if(x->klass() != y->klass())
+        return Universe::False;
+
+    auto *ix = (Integer *)x;
+    auto *iy = (Integer *)y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    if(ix->value() == iy->value())
         return Universe::True;
     return Universe::False;
 }
 
-Object *Integer::not_equal(Object *x) {
-    if(_value != ((Integer*)x)->_value)
+Object *IntegerKlass::not_equal(Object *x, Object *y) {
+    if(x->klass() != y->klass())
+        return Universe::False;
+
+    auto *ix = (Integer *)x;
+    auto *iy = (Integer *)y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    if(ix->value() != iy->value())
         return Universe::True;
     return Universe::False;
 }
 
-Object *Integer::ge(Object *x) {
-    if(_value >= ((Integer*)x)->_value)
+Object *IntegerKlass::ge(Object *x, Object *y) {
+    if(x->klass() != y->klass())
+        return Universe::False;
+
+    auto *ix = (Integer *)x;
+    auto *iy = (Integer *)y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    if(ix->value() >= iy->value())
         return Universe::True;
     return Universe::False;
 }
 
-Object *Integer::le(Object *x) {
-    if(_value <= ((Integer*)x)->_value)
+Object *IntegerKlass::le(Object *x, Object *y) {
+    if(x->klass() != y->klass())
+        return Universe::False;
+
+    auto *ix = (Integer *)x;
+    auto *iy = (Integer *)y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    if(ix->value() <= iy->value())
         return Universe::True;
     return Universe::False;
 }
+
+Object *IntegerKlass::sub(Object *x, Object *y) {
+    auto *ix = (Integer*) x;
+    auto *iy = (Integer*) y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    return new Integer(ix->value() - iy->value());
+}
+
+Object *IntegerKlass::mul(Object *x, Object *y) {
+    auto *ix = (Integer*) x;
+    auto *iy = (Integer*) y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    return new Integer(ix->value() * iy->value());
+}
+
+Object *IntegerKlass::div(Object *x, Object *y) {
+    auto *ix = (Integer*) x;
+    auto *iy = (Integer*) y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    return new Integer(ix->value() / iy->value());
+}
+
+Object *IntegerKlass::mod(Object *x, Object *y) {
+    auto *ix = (Integer*) x;
+    auto *iy = (Integer*) y;
+
+    assert(ix && (ix->klass() == (Klass *)this));
+    assert(iy && (iy->klass() == (Klass *)this));
+
+    return new Integer(ix->value() % iy->value());
+}
+
+void IntegerKlass::print(Object *x) {
+    printf("%d", ((Integer *)x)->value());
+}
+
+
+
 
 

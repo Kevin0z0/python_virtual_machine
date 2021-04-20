@@ -1,38 +1,32 @@
 //
 // Created by zkw on 2021-04-10.
 //
-#ifndef u_int
-#define u_int unsigned int
-#endif
-
 #ifndef CPP_STRING_HPP
 #define CPP_STRING_HPP
 #include "Object.hpp"
-#include <iostream>
+
+class StringKlass : public Klass {
+private:
+    StringKlass();
+    static StringKlass *instance;
+
+public:
+    static StringKlass *getInstance();
+    virtual Object *equal(Object *x, Object *y);
+    virtual void print(Object *x);
+};
 
 class String : public Object {
 private:
     char *_value;
-    u_int _length;
+    unsigned int _length;
 
 public:
     explicit String(const char *x);
     explicit String(const char *x, int length);
 
     const char *value() {return _value;}
-    u_int length() const {return _length;}
-    void print() override;
-
-    Object *equal(Object *x) override;
-
-    friend std::ostream& operator<<(std::ostream &os, String &s){
-        for(int i = 0; i < s._length; i++){
-            std::cout << s._value[i];
-        }
-        return os;
-    }
-
+    unsigned int length() const {return _length;}
 };
-
 
 #endif //CPP_STRING_HPP
