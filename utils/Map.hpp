@@ -12,29 +12,29 @@ public:
     V _value;
 
     MapEntry():_key(0), _value(0){};
-    MapEntry(K k, V v):_key(k), _value(v){};
     MapEntry(const MapEntry<K, V>& entry);
+    MapEntry(K k, V v):_key(k), _value(v){};
 };
 
 template <typename K, typename V>
 class Map {
 private:
-    MapEntry<K, V> *_entries;
     int _size;
     int _length;
+    MapEntry<K, V> *_entries;
 
     void expand();
 public:
     Map();
     explicit Map(int size);
 
-    int size(){return _size;}
-    void set(K key, V value);
     V get(K key);
-    K getKey(int index);
-    bool hasKey(K key);
     V remove(K key);
     int index(K key);
+    bool hasKey(K key);
+    K getKey(int index);
+    void set(K key, V value);
+    int size(){return _size;}
     MapEntry<K, V> *entries(){ return _entries; }
 };
 

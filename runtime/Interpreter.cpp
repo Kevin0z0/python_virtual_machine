@@ -3,13 +3,25 @@
 //
 #include "iostream"
 #include "Interpreter.hpp"
-#include "../code/ByteCode.hpp"
-#include "../object/Integer.hpp"
-#include "../runtime/Universe.hpp"
+#include "code/ByteCode.hpp"
+#include "object/Integer.hpp"
+#include "runtime/Universe.hpp"
 
 #define PUSH(x) _frame->stack()->add((x))
 #define POP() _frame->stack()->pop()
 #define STACK_LEVEL() _frame->stack()->size()
+
+#define True Universe::True
+#define False Universe::False
+#define None Universe::None
+
+
+Interpreter::Interpreter() {
+    _builtins = new Map<Object *, Object *>();
+    _builtins->set(new String("None"),  None);
+    _builtins->set(new String("True"),  True);
+    _builtins->set(new String("False"), False);
+}
 
 void Interpreter::run(CodeObject *codes) {
     _frame = new FrameObject(codes);
@@ -48,14 +60,12 @@ void Interpreter::evalFrame() {
         switch (opCode) {
             case ByteCode::POP_TOP:
                 u = POP();
-                u->print();
                 break;
             case ByteCode::LOAD_CONST:
                 PUSH(_frame->consts()->get(opArg));
                 break;
             case ByteCode::PRINT_ITEM:
                 v = POP();
-                v->print();
                 break;
             case ByteCode::PRINT_NEWLINE:
                 printf("\n");
@@ -95,13 +105,20 @@ void Interpreter::evalFrame() {
                     case ByteCode::LESS_EQUAL:
                         PUSH(v->le(w));
                         break;
+                    case ByteCode::IS:
+                        PUSH(v == w ? True : False);
+                        break;
+                    case ByteCode::IS_NOT:
+                        PUSH(v == w ? False : True);
+                        break;
                     default:
                         printf("Error: Unrecognized compare op %d\n", opArg);
                 }
                 break;
             case ByteCode::POP_JUMP_IF_FALSE:
                 v = POP();
-                if(v == Universe::False)
+                v->print();
+                if(v == False)
                     _frame->setPC(opArg);
                 break;
             case ByteCode::STORE_NAME:
@@ -109,20 +126,26 @@ void Interpreter::evalFrame() {
                 break;
             case ByteCode::LOAD_NAME:
                 v = _frame->names()->get(opArg);
-                w = _frame->locals()->get(v);
                 //先去局部变量表查找变量
-                if(w != Universe::False){
+                w = _frame->locals()->get(v);
+                if(w != None){
                     PUSH(w);
                     break;
                 }
                 //再去全局变量查找变量
                 w = _frame->globals()->get(v);
-                if(w != Universe::False){
+                if(w != None){
+                    PUSH(w);
+                    break;
+                }
+                //最后去builtin变量查找变量
+                w = _builtins->get(v);
+                if(w != None){
                     PUSH(w);
                     break;
                 }
 
-                PUSH(Universe::None);
+                PUSH(None);
                 break;
             case ByteCode::JUMP_FORWARD:
                 _frame->setPC(_frame->getPC() + opArg);
@@ -160,8 +183,13 @@ void Interpreter::evalFrame() {
             case ByteCode::STORE_GLOBAL:
                 _frame->globals()->set(_frame->names()->get(opArg),POP());
                 break;
+            case ByteCode::LOAD_GLOBAL:
+                PUSH(_frame->globals()->get(_frame->names()->get(opArg)));
+                break;
             default:
                 printf("Error: Unrecognized byte code %d\n", opCode);
         }
     }
 }
+
+

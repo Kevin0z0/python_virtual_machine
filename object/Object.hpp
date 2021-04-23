@@ -31,7 +31,8 @@ public:
     void setKlass(Klass *x){
         _klass = x;
     }
-    void print();
+
+    virtual void print();
 
     Object *add       (Object *x);
     Object *sub       (Object *x);

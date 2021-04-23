@@ -3,8 +3,8 @@
 //
 #include "iostream"
 #include "BinaryFileParser.hpp"
-#include "../object/Integer.hpp"
-#include "../runtime/Universe.hpp"
+#include "object/Integer.hpp"
+#include "runtime/Universe.hpp"
 #include <cassert>
 
 BinaryFileParser::BinaryFileParser(BufferedInputStream *stream): fileStream(stream){}

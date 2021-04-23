@@ -4,8 +4,8 @@
 
 #ifndef CPP_CODEOBJECT_HPP
 #define CPP_CODEOBJECT_HPP
-#include "../object/String.hpp"
-#include "../utils/ArrayList.hpp"
+#include "object/String.hpp"
+#include "utils/ArrayList.hpp"
 
 class CodeObject : public Object{
 public:
@@ -39,6 +39,7 @@ public:
     String *_coName;
     int _lineNo;
     String *_notable;
+    void print() override;
 };
 
 

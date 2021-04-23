@@ -17,5 +17,4 @@ public:
     static void destory();
 };
 
-
 #endif //CPP_UNIVERSE_HPP

@@ -1,9 +1,5 @@
-global x
-x = 0
-
-def func():
-	global x
-	x = 1
+def foo():
+	return
 	
-func()
-print x
+if foo() is None:
+	print False

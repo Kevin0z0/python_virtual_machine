@@ -2,8 +2,7 @@
 // Created by zkw on 2021-04-10.
 //
 
-#include "CodeObject.hpp"
-
+#include "utils/Print.hpp"
 
 CodeObject::CodeObject(int argCount,
                        int nlocals,
@@ -33,4 +32,9 @@ CodeObject::CodeObject(int argCount,
                        _coName(coName),
                        _lineNo(lineNo),
                        _notable(notable) {}
+
+void CodeObject::print() {
+    printf("\n");
+    Print(this);
+}
 

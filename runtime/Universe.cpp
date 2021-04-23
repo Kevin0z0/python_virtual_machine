@@ -6,10 +6,10 @@
 
 Integer *Universe::True  = nullptr;
 Integer *Universe::False = nullptr;
-Object *Universe::None  = nullptr;
+Object *Universe::None   = nullptr;
 
 void Universe::genesis() {
-    True  = new Integer(1);
+    True  = new Integer(0);
     False = new Integer(0);
     None  = new Object();
 }

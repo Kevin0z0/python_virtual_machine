@@ -3,7 +3,7 @@
 //
 
 #include "String.hpp"
-#include "../runtime/Universe.hpp"
+#include "runtime/Universe.hpp"
 #include <cstring>
 StringKlass *StringKlass::instance = nullptr;
 StringKlass::StringKlass() = default;

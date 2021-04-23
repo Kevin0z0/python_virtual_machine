@@ -3,7 +3,7 @@
 //
 
 #include "Map.hpp"
-#include "../runtime/Universe.hpp"
+#include "runtime/Universe.hpp"
 
 template<typename K, typename V>
 MapEntry<K, V>::MapEntry(const MapEntry<K, V> &entry) :
