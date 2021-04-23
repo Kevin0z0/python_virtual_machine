@@ -7,16 +7,21 @@
 
 
 #include "../code/CodeObject.hpp"
+#include "FrameObject.hpp"
+
 class Block;
 class Interpreter {
 public:
     void run(CodeObject *codes);
+    void buildFrame(Object *callable);
+    void evalFrame();
+    void leaveFrame();
+    void destroyFrame();
 
 private:
-    ArrayList<Object*> *_stack;
-    ArrayList<Object*> *_consts;
-    ArrayList<Object*> *_names;
-    ArrayList<Block*>  *_loopStack;
+    FrameObject              *_frame;
+    Map<Object *, Object *>  _map;
+    Object                   *_retValue;
 };
 
 class Block{

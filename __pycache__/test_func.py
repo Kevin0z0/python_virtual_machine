@@ -1,4 +1,5 @@
 def foo():
-	print 1
+	print "Hello"
+	return "World"
 	
-foo()
+print foo()

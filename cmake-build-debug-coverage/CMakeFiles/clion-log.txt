@@ -1,0 +1,4 @@
+"D:\Program Files\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage -G "CodeBlocks - MinGW Makefiles" C:\Users\zkw\Desktop\python_virtual_machine
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/zkw/Desktop/python_virtual_machine/cmake-build-debug-coverage

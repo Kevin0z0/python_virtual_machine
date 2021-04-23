@@ -12,8 +12,8 @@ private:
 
 public:
     static StringKlass *getInstance();
-    virtual Object *equal(Object *x, Object *y);
-    virtual void print(Object *x);
+    Object *equal(Object *x, Object *y) override;
+    void print(Object *x) override;
 };
 
 class String : public Object {
