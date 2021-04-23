@@ -35,8 +35,6 @@ void Interpreter::destroyFrame() {
 }
 
 void Interpreter::evalFrame() {
-    _map = Map<Object *, Object *>(_frame->names()->size());
-
     while(_frame->hasMoreCodes()){
         unsigned char opCode = _frame->getOpCode();
         bool hasArgument = (opCode & 0xff) >= ByteCode::HAVE_ARGUMENT;
@@ -49,7 +47,8 @@ void Interpreter::evalFrame() {
         FunctionObject *fo;
         switch (opCode) {
             case ByteCode::POP_TOP:
-                POP();
+                u = POP();
+                u->print();
                 break;
             case ByteCode::LOAD_CONST:
                 PUSH(_frame->consts()->get(opArg));
@@ -106,10 +105,24 @@ void Interpreter::evalFrame() {
                     _frame->setPC(opArg);
                 break;
             case ByteCode::STORE_NAME:
-                _map.set(_frame->names()->get(opArg), POP());
+                _frame->locals()->set(_frame->names()->get(opArg), POP());
                 break;
             case ByteCode::LOAD_NAME:
-                PUSH(_map.get(_frame->names()->get(opArg)));
+                v = _frame->names()->get(opArg);
+                w = _frame->locals()->get(v);
+                //先去局部变量表查找变量
+                if(w != Universe::False){
+                    PUSH(w);
+                    break;
+                }
+                //再去全局变量查找变量
+                w = _frame->globals()->get(v);
+                if(w != Universe::False){
+                    PUSH(w);
+                    break;
+                }
+
+                PUSH(Universe::None);
                 break;
             case ByteCode::JUMP_FORWARD:
                 _frame->setPC(_frame->getPC() + opArg);
@@ -138,10 +151,14 @@ void Interpreter::evalFrame() {
             case ByteCode::MAKE_FUNCTION:
                 v = POP();
                 fo = new FunctionObject(v);
+                fo->setGlobals(_frame->globals());
                 PUSH(fo);
                 break;
             case ByteCode::CALL_FUNCTION:
                 buildFrame(POP());
+                break;
+            case ByteCode::STORE_GLOBAL:
+                _frame->globals()->set(_frame->names()->get(opArg),POP());
                 break;
             default:
                 printf("Error: Unrecognized byte code %d\n", opCode);

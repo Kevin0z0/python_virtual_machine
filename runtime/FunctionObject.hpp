@@ -8,6 +8,7 @@
 #include <object/Klass.hpp>
 #include <object/Object.hpp>
 #include <code/CodeObject.hpp>
+#include <utils/Map.hpp>
 
 class FunctionKlass : public Klass{
 private:
@@ -28,6 +29,7 @@ private:
     CodeObject *_funcCode{};
     String     *_funcName{};
     unsigned int _flags{};
+    Map<Object *, Object *> *_globals {};
 
 public:
     explicit FunctionObject(Object *codeObject);
@@ -36,6 +38,10 @@ public:
 
     String       *funcName()   { return _funcName; }
     unsigned int flags() const { return _flags;    }
+    Map<Object *, Object *> *globals() { return _globals; }
+    void setGlobals(Map<Object *, Object *> *globals){
+        _globals = globals;
+    }
 };
 
 

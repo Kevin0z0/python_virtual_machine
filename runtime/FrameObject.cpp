@@ -6,6 +6,10 @@
 
 FrameObject::FrameObject() = default;
 
+/**
+ * 初始化时加载，可理解为main函数
+ * @param codes
+ */
 FrameObject::FrameObject(CodeObject *codes) :
     _consts(codes->_consts),
     _names(codes->_names),
@@ -13,9 +17,14 @@ FrameObject::FrameObject(CodeObject *codes) :
     _stack(new ArrayList<Object *>()),
     _loopStack(new ArrayList<Block *>()),
     _codes(codes),
-    _pc(0){}
+    _pc(0),
+    _globals(_locals) //非函数的上下文中，局部变量和全局变量作用一样
+    {}
 
-
+/**
+ * 创建新函数
+ * @param func
+ */
 FrameObject::FrameObject(FunctionObject *func) : _codes(func->_funcCode){
     _consts     = _codes->_consts;
     _names      = _codes->_names;
@@ -24,6 +33,7 @@ FrameObject::FrameObject(FunctionObject *func) : _codes(func->_funcCode){
     _pc         = 0;
     _sender     = nullptr;
     _stack      = new ArrayList<Object *>();
+    _globals    = func->_globals; //新的栈帧会载入全局变量
 }
 
 
