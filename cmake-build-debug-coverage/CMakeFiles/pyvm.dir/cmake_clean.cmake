@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/pyvm.dir/runtime/Universe.cpp.obj"
   "CMakeFiles/pyvm.dir/utils/ArrayList.cpp.obj"
   "CMakeFiles/pyvm.dir/utils/Map.cpp.obj"
+  "CMakeFiles/pyvm.dir/utils/Print.cpp.obj"
   "libpyvm.dll.a"
   "pyvm.exe"
   "pyvm.exe.manifest"

@@ -29,8 +29,8 @@ void Interpreter::run(CodeObject *codes) {
     destroyFrame();
 }
 
-void Interpreter::buildFrame(Object *callable) {
-    auto *frame = new FrameObject((FunctionObject *)callable);
+void Interpreter::buildFrame(Object *callable, ObjList args) {
+    auto *frame = new FrameObject((FunctionObject *)callable, args);
     frame->setSender(_frame);
     _frame = frame;
 }
@@ -57,6 +57,7 @@ void Interpreter::evalFrame() {
         Object *v, *w, *u, *attr;
         Block *b;
         FunctionObject *fo;
+        ObjList args = nullptr;
         switch (opCode) {
             case ByteCode::POP_TOP:
                 u = POP();
@@ -66,6 +67,7 @@ void Interpreter::evalFrame() {
                 break;
             case ByteCode::PRINT_ITEM:
                 v = POP();
+                v->print();
                 break;
             case ByteCode::PRINT_NEWLINE:
                 printf("\n");
@@ -117,7 +119,6 @@ void Interpreter::evalFrame() {
                 break;
             case ByteCode::POP_JUMP_IF_FALSE:
                 v = POP();
-                v->print();
                 if(v == False)
                     _frame->setPC(opArg);
                 break;
@@ -175,16 +176,41 @@ void Interpreter::evalFrame() {
                 v = POP();
                 fo = new FunctionObject(v);
                 fo->setGlobals(_frame->globals());
+
+                if(opArg > 0){
+                    args = new ArrayList<Object *>(opArg);
+                    while (opArg--){
+                        args->set(opArg, POP());
+                    }
+                }
+                fo->setDefault(args);
                 PUSH(fo);
                 break;
             case ByteCode::CALL_FUNCTION:
-                buildFrame(POP());
+                if(opArg > 0){
+                    args = new ArrayList<Object *>;
+                    while(opArg--){
+                        v = POP();
+                        args->set(opArg, v);
+                    }
+                }
+                buildFrame(POP(), args);
+                if(args != nullptr){
+                    delete args;
+                    args = nullptr;
+                }
                 break;
             case ByteCode::STORE_GLOBAL:
                 _frame->globals()->set(_frame->names()->get(opArg),POP());
                 break;
             case ByteCode::LOAD_GLOBAL:
                 PUSH(_frame->globals()->get(_frame->names()->get(opArg)));
+                break;
+            case ByteCode::LOAD_FAST:
+                PUSH(_frame->fastLocals()->get(opArg));
+                break;
+            case ByteCode::STORE_FAST:
+                _frame->fastLocals()->set(opArg, POP());
                 break;
             default:
                 printf("Error: Unrecognized byte code %d\n", opCode);

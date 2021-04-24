@@ -25,7 +25,7 @@ FrameObject::FrameObject(CodeObject *codes) :
  * 创建新函数
  * @param func
  */
-FrameObject::FrameObject(FunctionObject *func) : _codes(func->_funcCode){
+FrameObject::FrameObject(FunctionObject *func, ObjList args) : _codes(func->_funcCode){
     _consts     = _codes->_consts;
     _names      = _codes->_names;
     _loopStack  = new ArrayList<Block*>();
@@ -34,6 +34,26 @@ FrameObject::FrameObject(FunctionObject *func) : _codes(func->_funcCode){
     _sender     = nullptr;
     _stack      = new ArrayList<Object *>();
     _globals    = func->_globals; //新的栈帧会载入全局变量
+
+    _fastLocals = nullptr;
+
+    if(func->_defaults){
+        _fastLocals = new ArrayList<Object *>;
+        int defaultArgs = func->_defaults->size();
+        int argsNum = _codes->_argCount;
+
+        while(defaultArgs--){
+            _fastLocals->set(--argsNum, func->_defaults->get(defaultArgs));
+        }
+    }
+
+    if(args){
+        if(!_fastLocals) _fastLocals = new ArrayList<Object *>;
+
+        for(int i = 0; i < args->size(); i++){
+            _fastLocals->set(i, args->get(i));
+        }
+    }
 }
 
 
@@ -50,3 +70,5 @@ int FrameObject::getOpArg() {
     int byte2 = _codes->_bytecodes->value()[_pc++] & 0xff;
     return byte2 << 8 | byte1;
 }
+
+

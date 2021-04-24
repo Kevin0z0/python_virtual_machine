@@ -15,7 +15,7 @@ public:
     void leaveFrame();
     void destroyFrame();
     void run(CodeObject *codes);
-    void buildFrame(Object *callable);
+    void buildFrame(Object *callable, ObjList args);
 
 private:
     FrameObject *_frame{};

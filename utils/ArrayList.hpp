@@ -14,7 +14,7 @@ private:
 
     void expand();
 public:
-    explicit ArrayList(int n = 8);
+    explicit ArrayList(int size = 8);
     ~ArrayList();
 
     void add(T t);
@@ -36,4 +36,6 @@ template class ArrayList<String*>;
 
 class Block;
 template class ArrayList<Block*>;
+
+typedef ArrayList<Object*>* ObjList;
 #endif //CPP_ARRAYLIST_HPP

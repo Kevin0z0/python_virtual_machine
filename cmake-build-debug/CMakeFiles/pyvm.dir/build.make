@@ -52,10 +52,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "E:\Program Files\CLion 2021.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Program Files\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "E:\Program Files\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "D:\Program Files\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,197 +79,197 @@ CMakeFiles/pyvm.dir/main.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/main.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pyvm.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\main.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\main.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\main.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\main.cpp
 
 CMakeFiles/pyvm.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\main.cpp > CMakeFiles\pyvm.dir\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\main.cpp > CMakeFiles\pyvm.dir\main.cpp.i
 
 CMakeFiles/pyvm.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\main.cpp -o CMakeFiles\pyvm.dir\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\main.cpp -o CMakeFiles\pyvm.dir\main.cpp.s
 
 CMakeFiles/pyvm.dir/utils/ArrayList.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/utils/ArrayList.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/utils/ArrayList.cpp.obj: ../utils/ArrayList.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pyvm.dir/utils/ArrayList.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\utils\ArrayList.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\utils\ArrayList.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\utils\ArrayList.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\utils\ArrayList.cpp
 
 CMakeFiles/pyvm.dir/utils/ArrayList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/utils/ArrayList.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\utils\ArrayList.cpp > CMakeFiles\pyvm.dir\utils\ArrayList.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\utils\ArrayList.cpp > CMakeFiles\pyvm.dir\utils\ArrayList.cpp.i
 
 CMakeFiles/pyvm.dir/utils/ArrayList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/utils/ArrayList.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\utils\ArrayList.cpp -o CMakeFiles\pyvm.dir\utils\ArrayList.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\utils\ArrayList.cpp -o CMakeFiles\pyvm.dir\utils\ArrayList.cpp.s
 
 CMakeFiles/pyvm.dir/object/Object.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/object/Object.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/object/Object.cpp.obj: ../object/Object.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pyvm.dir/object/Object.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\Object.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\Object.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\Object.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\Object.cpp
 
 CMakeFiles/pyvm.dir/object/Object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/object/Object.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\Object.cpp > CMakeFiles\pyvm.dir\object\Object.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\Object.cpp > CMakeFiles\pyvm.dir\object\Object.cpp.i
 
 CMakeFiles/pyvm.dir/object/Object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/object/Object.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\Object.cpp -o CMakeFiles\pyvm.dir\object\Object.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\Object.cpp -o CMakeFiles\pyvm.dir\object\Object.cpp.s
 
 CMakeFiles/pyvm.dir/object/String.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/object/String.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/object/String.cpp.obj: ../object/String.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pyvm.dir/object/String.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\String.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\String.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\String.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\String.cpp
 
 CMakeFiles/pyvm.dir/object/String.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/object/String.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\String.cpp > CMakeFiles\pyvm.dir\object\String.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\String.cpp > CMakeFiles\pyvm.dir\object\String.cpp.i
 
 CMakeFiles/pyvm.dir/object/String.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/object/String.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\String.cpp -o CMakeFiles\pyvm.dir\object\String.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\String.cpp -o CMakeFiles\pyvm.dir\object\String.cpp.s
 
 CMakeFiles/pyvm.dir/object/Integer.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/object/Integer.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/object/Integer.cpp.obj: ../object/Integer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pyvm.dir/object/Integer.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\Integer.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\Integer.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\Integer.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\Integer.cpp
 
 CMakeFiles/pyvm.dir/object/Integer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/object/Integer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\Integer.cpp > CMakeFiles\pyvm.dir\object\Integer.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\Integer.cpp > CMakeFiles\pyvm.dir\object\Integer.cpp.i
 
 CMakeFiles/pyvm.dir/object/Integer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/object/Integer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\Integer.cpp -o CMakeFiles\pyvm.dir\object\Integer.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\Integer.cpp -o CMakeFiles\pyvm.dir\object\Integer.cpp.s
 
 CMakeFiles/pyvm.dir/code/CodeObject.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/code/CodeObject.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/code/CodeObject.cpp.obj: ../code/CodeObject.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pyvm.dir/code/CodeObject.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\code\CodeObject.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\code\CodeObject.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\code\CodeObject.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\code\CodeObject.cpp
 
 CMakeFiles/pyvm.dir/code/CodeObject.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/code/CodeObject.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\code\CodeObject.cpp > CMakeFiles\pyvm.dir\code\CodeObject.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\code\CodeObject.cpp > CMakeFiles\pyvm.dir\code\CodeObject.cpp.i
 
 CMakeFiles/pyvm.dir/code/CodeObject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/code/CodeObject.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\code\CodeObject.cpp -o CMakeFiles\pyvm.dir\code\CodeObject.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\code\CodeObject.cpp -o CMakeFiles\pyvm.dir\code\CodeObject.cpp.s
 
 CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.obj: ../code/BinaryFileParser.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\code\BinaryFileParser.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\code\BinaryFileParser.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\code\BinaryFileParser.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\code\BinaryFileParser.cpp
 
 CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\code\BinaryFileParser.cpp > CMakeFiles\pyvm.dir\code\BinaryFileParser.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\code\BinaryFileParser.cpp > CMakeFiles\pyvm.dir\code\BinaryFileParser.cpp.i
 
 CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/code/BinaryFileParser.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\code\BinaryFileParser.cpp -o CMakeFiles\pyvm.dir\code\BinaryFileParser.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\code\BinaryFileParser.cpp -o CMakeFiles\pyvm.dir\code\BinaryFileParser.cpp.s
 
 CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.obj: ../runtime/Interpreter.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\Interpreter.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\Interpreter.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\Interpreter.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\Interpreter.cpp
 
 CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\Interpreter.cpp > CMakeFiles\pyvm.dir\runtime\Interpreter.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\Interpreter.cpp > CMakeFiles\pyvm.dir\runtime\Interpreter.cpp.i
 
 CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/runtime/Interpreter.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\Interpreter.cpp -o CMakeFiles\pyvm.dir\runtime\Interpreter.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\Interpreter.cpp -o CMakeFiles\pyvm.dir\runtime\Interpreter.cpp.s
 
 CMakeFiles/pyvm.dir/runtime/Universe.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/runtime/Universe.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/runtime/Universe.cpp.obj: ../runtime/Universe.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/pyvm.dir/runtime/Universe.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\Universe.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\Universe.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\Universe.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\Universe.cpp
 
 CMakeFiles/pyvm.dir/runtime/Universe.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/runtime/Universe.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\Universe.cpp > CMakeFiles\pyvm.dir\runtime\Universe.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\Universe.cpp > CMakeFiles\pyvm.dir\runtime\Universe.cpp.i
 
 CMakeFiles/pyvm.dir/runtime/Universe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/runtime/Universe.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\Universe.cpp -o CMakeFiles\pyvm.dir\runtime\Universe.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\Universe.cpp -o CMakeFiles\pyvm.dir\runtime\Universe.cpp.s
 
 CMakeFiles/pyvm.dir/utils/Map.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/utils/Map.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/utils/Map.cpp.obj: ../utils/Map.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/pyvm.dir/utils/Map.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\utils\Map.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\utils\Map.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\utils\Map.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\utils\Map.cpp
 
 CMakeFiles/pyvm.dir/utils/Map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/utils/Map.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\utils\Map.cpp > CMakeFiles\pyvm.dir\utils\Map.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\utils\Map.cpp > CMakeFiles\pyvm.dir\utils\Map.cpp.i
 
 CMakeFiles/pyvm.dir/utils/Map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/utils/Map.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\utils\Map.cpp -o CMakeFiles\pyvm.dir\utils\Map.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\utils\Map.cpp -o CMakeFiles\pyvm.dir\utils\Map.cpp.s
 
 CMakeFiles/pyvm.dir/object/Klass.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/object/Klass.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/object/Klass.cpp.obj: ../object/Klass.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/pyvm.dir/object/Klass.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\Klass.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\Klass.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\object\Klass.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\object\Klass.cpp
 
 CMakeFiles/pyvm.dir/object/Klass.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/object/Klass.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\Klass.cpp > CMakeFiles\pyvm.dir\object\Klass.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\object\Klass.cpp > CMakeFiles\pyvm.dir\object\Klass.cpp.i
 
 CMakeFiles/pyvm.dir/object/Klass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/object/Klass.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\Klass.cpp -o CMakeFiles\pyvm.dir\object\Klass.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\object\Klass.cpp -o CMakeFiles\pyvm.dir\object\Klass.cpp.s
 
 CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.obj: ../runtime/FrameObject.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\FrameObject.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\FrameObject.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\FrameObject.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\FrameObject.cpp
 
 CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\FrameObject.cpp > CMakeFiles\pyvm.dir\runtime\FrameObject.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\FrameObject.cpp > CMakeFiles\pyvm.dir\runtime\FrameObject.cpp.i
 
 CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/runtime/FrameObject.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\FrameObject.cpp -o CMakeFiles\pyvm.dir\runtime\FrameObject.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\FrameObject.cpp -o CMakeFiles\pyvm.dir\runtime\FrameObject.cpp.s
 
 CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.obj: ../runtime/FunctionObject.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\FunctionObject.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\FunctionObject.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\runtime\FunctionObject.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\runtime\FunctionObject.cpp
 
 CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\FunctionObject.cpp > CMakeFiles\pyvm.dir\runtime\FunctionObject.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\runtime\FunctionObject.cpp > CMakeFiles\pyvm.dir\runtime\FunctionObject.cpp.i
 
 CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/runtime/FunctionObject.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\FunctionObject.cpp -o CMakeFiles\pyvm.dir\runtime\FunctionObject.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\runtime\FunctionObject.cpp -o CMakeFiles\pyvm.dir\runtime\FunctionObject.cpp.s
 
 CMakeFiles/pyvm.dir/utils/Print.cpp.obj: CMakeFiles/pyvm.dir/flags.make
 CMakeFiles/pyvm.dir/utils/Print.cpp.obj: CMakeFiles/pyvm.dir/includes_CXX.rsp
 CMakeFiles/pyvm.dir/utils/Print.cpp.obj: ../utils/Print.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zkw\Desktop\python_virtual_machine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/pyvm.dir/utils/Print.cpp.obj"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\utils\Print.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\utils\Print.cpp
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\pyvm.dir\utils\Print.cpp.obj -c C:\Users\zkw\Desktop\python_virtual_machine\utils\Print.cpp
 
 CMakeFiles/pyvm.dir/utils/Print.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pyvm.dir/utils/Print.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\utils\Print.cpp > CMakeFiles\pyvm.dir\utils\Print.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zkw\Desktop\python_virtual_machine\utils\Print.cpp > CMakeFiles\pyvm.dir\utils\Print.cpp.i
 
 CMakeFiles/pyvm.dir/utils/Print.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pyvm.dir/utils/Print.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\utils\Print.cpp -o CMakeFiles\pyvm.dir\utils\Print.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zkw\Desktop\python_virtual_machine\utils\Print.cpp -o CMakeFiles\pyvm.dir\utils\Print.cpp.s
 
 # Object files for target pyvm
 pyvm_OBJECTS = \

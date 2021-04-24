@@ -28,6 +28,7 @@ friend class FrameObject;
 private:
     CodeObject *_funcCode{};
     String     *_funcName{};
+    ObjList    _defaults {};
     unsigned int _flags{};
     Map<Object *, Object *> *_globals {};
 
@@ -42,6 +43,8 @@ public:
     void setGlobals(Map<Object *, Object *> *globals){
         _globals = globals;
     }
+    void setDefault(ObjList defaults);
+    ObjList defaults() { return _defaults; }
 };
 
 

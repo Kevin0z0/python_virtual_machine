@@ -157,6 +157,12 @@
 		<Unit filename="C:/Users/zkw/Desktop/python_virtual_machine/utils/Map.hpp">
 			<Option target="pyvm"/>
 		</Unit>
+		<Unit filename="C:/Users/zkw/Desktop/python_virtual_machine/utils/Print.cpp">
+			<Option target="pyvm"/>
+		</Unit>
+		<Unit filename="C:/Users/zkw/Desktop/python_virtual_machine/utils/Print.hpp">
+			<Option target="pyvm"/>
+		</Unit>
 		<Unit filename="C:/Users/zkw/Desktop/python_virtual_machine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

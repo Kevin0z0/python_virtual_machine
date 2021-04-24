@@ -46,7 +46,7 @@ void Print::print(const std::string &str, int t) {
 void Print::print(const std::string &str, ArrayList<Object *> *a) {
     printIndent();
     std::cout << str << "(";
-    int len = a->length();
+    int len = a->size();
     for (int i = 0; i < len; i++) {
         a->get(i)->print();
         if(i != len - 1) printf(", ");

@@ -27,6 +27,7 @@ FunctionObject::FunctionObject(Object *codeObject) {
     _funcCode = co;
     _funcName = co->_coName;
     _flags    = co->_flag;
+    _defaults   = nullptr;
 
     setKlass(FunctionKlass::getInstance());
 }
@@ -35,9 +36,17 @@ FunctionObject::FunctionObject(Klass *klass) {
     _funcCode = nullptr;
     _funcName = nullptr;
     _flags    = 0;
+    _defaults   = nullptr;
     setKlass(klass);
 }
 
+void FunctionObject::setDefault(ObjList defaults) {
+    if(defaults == nullptr) return;
 
+    _defaults = new ArrayList<Object *>(defaults->size());
+    for(int i = 0; i < defaults->size(); i++){
+        _defaults->set(i, defaults->get(i));
+    }
+}
 
 

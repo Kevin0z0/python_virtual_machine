@@ -492,6 +492,33 @@ utils/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pyvm.dir\build.make CMakeFiles/pyvm.dir/utils/Map.cpp.s
 .PHONY : utils/Map.cpp.s
 
+utils/Print.obj: utils/Print.cpp.obj
+
+.PHONY : utils/Print.obj
+
+# target to build an object file
+utils/Print.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pyvm.dir\build.make CMakeFiles/pyvm.dir/utils/Print.cpp.obj
+.PHONY : utils/Print.cpp.obj
+
+utils/Print.i: utils/Print.cpp.i
+
+.PHONY : utils/Print.i
+
+# target to preprocess a source file
+utils/Print.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pyvm.dir\build.make CMakeFiles/pyvm.dir/utils/Print.cpp.i
+.PHONY : utils/Print.cpp.i
+
+utils/Print.s: utils/Print.cpp.s
+
+.PHONY : utils/Print.s
+
+# target to generate assembly for a file
+utils/Print.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pyvm.dir\build.make CMakeFiles/pyvm.dir/utils/Print.cpp.s
+.PHONY : utils/Print.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -540,6 +567,9 @@ help:
 	@echo ... utils/Map.obj
 	@echo ... utils/Map.i
 	@echo ... utils/Map.s
+	@echo ... utils/Print.obj
+	@echo ... utils/Print.i
+	@echo ... utils/Print.s
 .PHONY : help
 
 

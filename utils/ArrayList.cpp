@@ -18,10 +18,10 @@ void ArrayList<T>::expand() {
 }
 
 template<typename T>
-ArrayList<T>::ArrayList(int n):
-    _length(n),
+ArrayList<T>::ArrayList(int size):
+    _length(size),
     _size(0),
-    _array(new T[n]) {}
+    _array(new T[_length]) {}
 
 
 template<typename T>
@@ -82,3 +82,4 @@ ArrayList<T>::~ArrayList() {
 //        delete _array;
 //    }
 }
+
