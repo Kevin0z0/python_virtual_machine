@@ -1,3 +1,0 @@
-"D:\Program Files\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\pyvm.dir/objects.a
-C:\mingw64\bin\ar.exe cr CMakeFiles\pyvm.dir/objects.a @CMakeFiles\pyvm.dir\objects1.rsp
-C:\mingw64\bin\g++.exe --coverage -g -Wl,--whole-archive CMakeFiles\pyvm.dir/objects.a -Wl,--no-whole-archive -o pyvm.exe -Wl,--out-implib,libpyvm.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pyvm.dir\linklibs.rsp

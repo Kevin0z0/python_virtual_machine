@@ -1,3 +1,0 @@
-C:/Users/zkw/Desktop/python_virtual_machine/cmake-build-debug/CMakeFiles/pyvm.dir
-C:/Users/zkw/Desktop/python_virtual_machine/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/zkw/Desktop/python_virtual_machine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
