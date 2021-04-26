@@ -21,6 +21,21 @@ FunctionKlass *FunctionKlass::getInstance() {
     return instance;
 }
 
+/**
+ * NativeFunctionKlass
+ */
+NativeFunctionKlass *NativeFunctionKlass::instance = nullptr;
+NativeFunctionKlass::NativeFunctionKlass() = default;
+
+NativeFunctionKlass *NativeFunctionKlass::getInstance() {
+    if(instance == nullptr)
+        instance = new NativeFunctionKlass();
+    return instance;
+}
+
+/**
+ * FunctionObject
+ */
 FunctionObject::FunctionObject() = default;
 FunctionObject::FunctionObject(Object *codeObject) {
     auto *co = (CodeObject *) codeObject;
@@ -47,6 +62,6 @@ void FunctionObject::setDefault(ObjList defaults) {
     for(int i = 0; i < defaults->size(); i++){
         _defaults->set(i, defaults->get(i));
     }
-}
 
+}
 

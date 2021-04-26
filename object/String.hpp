@@ -12,8 +12,10 @@ private:
 
 public:
     static StringKlass *getInstance();
-    Object *equal(Object *x, Object *y) override;
-    void print(Object *x) override;
+    void   print      (Object *x) override;
+    Object *equal     (Object *x, Object *y) override;
+    Object *subscr    (Object *x, Object *y) override;
+    Object *contains  (Object *x, Object *y) override;
 };
 
 class String : public Object {

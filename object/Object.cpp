@@ -65,3 +65,11 @@ Object *Object::mod(Object *x) {
     return klass()->mod(this, x);
 }
 
+Object *Object::subscr(Object *x) {
+    return klass()->subscr(this, x);
+}
+
+Object *Object::contains(Object *x) {
+    return klass()->contains(this, x);
+}
+

@@ -1,6 +1,7 @@
 //
 // Created by zkw on 2021-04-12.
 //
+#include <object/List.hpp>
 #include "iostream"
 #include "Interpreter.hpp"
 #include "code/ByteCode.hpp"
@@ -113,6 +114,17 @@ void Interpreter::evalFrame() {
                     case ByteCode::IS_NOT:
                         PUSH(v == w ? False : True);
                         break;
+                    case ByteCode::IN:
+                        PUSH(w->contains(v));
+                        break;
+                    case ByteCode::NOT_IN:
+                        u = w->contains(v);
+                        if(u == Universe::True){
+                            PUSH(Universe::False);
+                            break;
+                        }
+                        PUSH(Universe::True);
+                        break;
                     default:
                         printf("Error: Unrecognized compare op %d\n", opArg);
                 }
@@ -211,6 +223,17 @@ void Interpreter::evalFrame() {
                 break;
             case ByteCode::STORE_FAST:
                 _frame->fastLocals()->set(opArg, POP());
+                break;
+            case ByteCode::BUILD_LIST:
+                v = new List;
+                while(opArg--)
+                    ((List *)v)->set(opArg,POP());
+                PUSH(v);
+                break;
+            case ByteCode::BINARY_SUBSCR:
+                v = POP();
+                w = POP();
+                PUSH(w->subscr(v));
                 break;
             default:
                 printf("Error: Unrecognized byte code %d\n", opCode);

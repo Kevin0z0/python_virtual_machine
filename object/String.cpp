@@ -56,3 +56,23 @@ void StringKlass::print(Object *x) {
         printf("%c", str->value()[i]);
     }
 }
+
+Object *StringKlass::subscr(Object *x, Object *y) {
+    assert(x && x->klass() == (Klass *)this);
+    assert(y && y->klass() == (Klass *)IntegerKlass::getInstance());
+
+    auto *sx = (String *)x;
+    auto *sy = (Integer *)y;
+    return new String(&(sx->value()[sy->value()]), 1);
+}
+
+Object *StringKlass::contains(Object *x, Object *y) {
+    assert(x && x->klass() == (Klass *)this);
+    assert(y && y->klass() == (Klass *)this);
+
+    auto *sx = (String *)x;
+    auto *sy = (String *)y;
+
+
+
+}

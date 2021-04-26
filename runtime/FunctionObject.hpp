@@ -21,6 +21,15 @@ public:
     void print(Object *obj) override;
 };
 
+class NativeFunctionKlass : public Klass{
+private:
+    NativeFunctionKlass();
+    static NativeFunctionKlass *instance;
+
+public:
+    static NativeFunctionKlass *getInstance();
+};
+
 class FunctionObject : public Object{
 friend class FunctionKlass;
 friend class FrameObject;

@@ -45,6 +45,8 @@ public:
     Object *not_equal (Object *x);
     Object *ge        (Object *x);
     Object *le        (Object *x);
+    Object *subscr    (Object *x);
+    Object *contains  (Object *x);
 
 };
 

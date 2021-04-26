@@ -30,6 +30,6 @@ add_executable(
         runtime/FrameObject.cpp 
         runtime/FrameObject.hpp 
         runtime/FunctionObject.cpp 
-        runtime/FunctionObject.hpp utils/Print.cpp utils/Print.hpp)
+        runtime/FunctionObject.hpp utils/Print.cpp utils/Print.hpp object/List.cpp object/List.hpp)
 
 include_directories(./)
