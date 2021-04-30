@@ -8,15 +8,21 @@
 
 class Object;
 class String;
+class List;
 
 class Klass {
 private:
-    String *_name;
+    String  *_name;
+    Klass   *_super;
 public:
     Klass();
 
-    void setName(String *x)   {_name = x;}
-    String *name()            {return _name;}
+    void    setSuper(Klass *x)  {_super = x;   }
+    void    setName(String *x)  {_name = x;    }
+
+    Klass  *super()             {return _super;}
+    String *name()              {return _name; }
+
     virtual Object *greater   (Object *x, Object *y) { return nullptr; }
     virtual Object *less      (Object *x, Object *y) { return nullptr; }
     virtual Object *equal     (Object *x, Object *y) { return nullptr; }
@@ -30,6 +36,7 @@ public:
     virtual Object *mod       (Object *x, Object *y) { return nullptr; }
     virtual Object *subscr    (Object *x, Object *y) { return nullptr; }
     virtual Object *contains  (Object *x, Object *y) { return nullptr; }
+    virtual Object *len       (Object *x)            { return nullptr; }
     virtual void    print     (Object *obj)   { printf("None"); }
 };
 

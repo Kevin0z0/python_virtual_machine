@@ -25,7 +25,9 @@ FunctionKlass *FunctionKlass::getInstance() {
  * NativeFunctionKlass
  */
 NativeFunctionKlass *NativeFunctionKlass::instance = nullptr;
-NativeFunctionKlass::NativeFunctionKlass() = default;
+NativeFunctionKlass::NativeFunctionKlass(){
+    setSuper(FunctionKlass::getInstance());
+};
 
 NativeFunctionKlass *NativeFunctionKlass::getInstance() {
     if(instance == nullptr)
@@ -65,3 +67,24 @@ void FunctionObject::setDefault(ObjList defaults) {
 
 }
 
+FunctionObject::FunctionObject(NativeFuncPointer nfp) {
+    _funcCode   = nullptr;
+    _funcName   = nullptr;
+    _flags      = 0;
+    _globals    = nullptr;
+    _nativeFunc = nfp;
+
+    setKlass(NativeFunctionKlass::getInstance());
+}
+
+Object *FunctionObject::call(ObjList args) {
+    return (*_nativeFunc)(args);
+}
+
+
+/**
+ * Native Functions
+ */
+Object* len(ObjList args){
+    return args->get(0)->len();
+}

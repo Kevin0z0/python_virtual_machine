@@ -60,3 +60,7 @@ Object *ListKlass::contains(Object *x, Object *y) {
     }
     return Universe::False;
 }
+
+Object *ListKlass::len(Object *x) {
+    return new Integer(((List *)x)->size());
+}

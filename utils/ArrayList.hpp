@@ -17,14 +17,16 @@ public:
     explicit ArrayList(int size = 8);
     ~ArrayList();
 
-    void add(T t);
-    void insert(int index, T t);
-    T get(int index);
-    void set(int index, T t);
-    int size();
-    int length();
     T pop();
+    T get(int index);
+
+    int  size();
+    int  length();
+
     void print();
+    void add(T t);
+    void set(int index, T t);
+    void insert(int index, T t);
 };
 
 //强制对模板类进行实例化
@@ -38,4 +40,6 @@ class Block;
 template class ArrayList<Block*>;
 
 typedef ArrayList<Object*>* ObjList;
-#endif //CPP_ARRAYLIST_HPP
+#endif
+
+//CPP_ARRAYLIST_HPP

@@ -16,6 +16,7 @@ public:
     Object *equal     (Object *x, Object *y) override;
     Object *subscr    (Object *x, Object *y) override;
     Object *contains  (Object *x, Object *y) override;
+    Object *len       (Object *x)            override;
 };
 
 class String : public Object {

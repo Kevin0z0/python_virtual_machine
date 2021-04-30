@@ -47,6 +47,7 @@ public:
     Object *le        (Object *x);
     Object *subscr    (Object *x);
     Object *contains  (Object *x);
+    Object *len       ();
 
 };
 

@@ -22,6 +22,7 @@ Interpreter::Interpreter() {
     _builtins->set(new String("None"),  None);
     _builtins->set(new String("True"),  True);
     _builtins->set(new String("False"), False);
+    _builtins->set(new String("len"), new FunctionObject(len));
 }
 
 void Interpreter::run(CodeObject *codes) {
@@ -31,9 +32,14 @@ void Interpreter::run(CodeObject *codes) {
 }
 
 void Interpreter::buildFrame(Object *callable, ObjList args) {
-    auto *frame = new FrameObject((FunctionObject *)callable, args);
-    frame->setSender(_frame);
-    _frame = frame;
+    if(callable->klass() == NativeFunctionKlass::getInstance()){
+        PUSH(((FunctionObject *)callable)->call(args));
+    }
+    else if(callable->klass() == FunctionKlass::getInstance()){
+        auto *frame = new FrameObject((FunctionObject *)callable, args);
+        frame->setSender(_frame);
+        _frame = frame;
+    }
 }
 
 void Interpreter::leaveFrame(){

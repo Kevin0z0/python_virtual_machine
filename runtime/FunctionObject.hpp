@@ -21,6 +21,9 @@ public:
     void print(Object *obj) override;
 };
 
+/**
+ * NativeFunctionKlass
+ */
 class NativeFunctionKlass : public Klass{
 private:
     NativeFunctionKlass();
@@ -30,9 +33,16 @@ public:
     static NativeFunctionKlass *getInstance();
 };
 
+Object* len(ObjList args);
+
+typedef Object* (*NativeFuncPointer)(ObjList args);
+
+/**
+ * FunctionObject
+ */
 class FunctionObject : public Object{
-friend class FunctionKlass;
-friend class FrameObject;
+    friend class FunctionKlass;
+    friend class FrameObject;
 
 private:
     CodeObject *_funcCode{};
@@ -41,14 +51,18 @@ private:
     unsigned int _flags{};
     Map<Object *, Object *> *_globals {};
 
+    NativeFuncPointer _nativeFunc;
+
 public:
-    explicit FunctionObject(Object *codeObject);
-    explicit FunctionObject(Klass *klass);
     FunctionObject();
+    explicit FunctionObject(Klass *klass);
+    explicit FunctionObject(Object *codeObject);
+    explicit FunctionObject(NativeFuncPointer nfp);
 
     String       *funcName()   { return _funcName; }
     unsigned int flags() const { return _flags;    }
     Map<Object *, Object *> *globals() { return _globals; }
+    Object *call(ObjList args);
     void setGlobals(Map<Object *, Object *> *globals){
         _globals = globals;
     }

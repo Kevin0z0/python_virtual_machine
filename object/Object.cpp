@@ -73,3 +73,9 @@ Object *Object::contains(Object *x) {
     return klass()->contains(this, x);
 }
 
+Object *Object::len() {
+    return klass()->len(this);
+}
+
+
+

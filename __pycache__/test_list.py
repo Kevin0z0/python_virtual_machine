@@ -8,3 +8,6 @@ if "hello" in lst:
 	
 else:
 	print "no"
+	
+lst.append("abc")
+print lst

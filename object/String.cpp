@@ -66,6 +66,63 @@ Object *StringKlass::subscr(Object *x, Object *y) {
     return new String(&(sx->value()[sy->value()]), 1);
 }
 
+long int* getNext(String *p){
+    auto length = (long int)p->length();
+    auto *next = new long int[length];
+    long int l = 0;
+    long int r = 1;
+    next[0] = 0;
+    const char *val = p->value();
+    while(r < length){
+        if(val[l] == val[r]){
+            next[r] = next[r - 1] + 1;
+            l++;
+            r++;
+        }else{
+            l = 0;
+            if(val[l] == val[r]){
+                next[r] = 1;
+                l++;
+            }
+            else
+                next[r] = 0;
+            r++;
+        }
+    }
+    return next;
+}
+
+long int KMP(String *s, String *p){
+    long int l = 0;
+    long int r = 0;
+    long int len = 0;
+    auto lenS = (long int)s->length();
+    auto lenP = (long int)p->length();
+    long int *next = getNext(p);
+    if(lenP > lenS) return -1;
+    const char *val1 = s->value();
+    const char *val2 = p->value();
+    while(r < lenP && l < lenS ){
+        if(val1[l] == val2[r]){
+            LOOP:
+            l++;
+            r++;
+            len++;
+        }else{
+            r = next[len ? r - 1 : len];
+            if(val1[l] == val2[r]){
+                len = r;
+                goto LOOP;
+            }
+            len = r = 0;
+            l++;
+        }
+        if(len == lenP)
+            return l - lenP;
+    }
+    return -1;
+}
+
 Object *StringKlass::contains(Object *x, Object *y) {
     assert(x && x->klass() == (Klass *)this);
     assert(y && y->klass() == (Klass *)this);
@@ -73,6 +130,11 @@ Object *StringKlass::contains(Object *x, Object *y) {
     auto *sx = (String *)x;
     auto *sy = (String *)y;
 
+    if(KMP(sx, sy) > -1)
+        return Universe::True;
+    return Universe::False;
+}
 
-
+Object *StringKlass::len(Object *x) {
+    return new Integer(((String *)x)->length());
 }
