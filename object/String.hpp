@@ -26,7 +26,7 @@ private:
 
 public:
     explicit String(const char *x);
-    explicit String(const char *x, int length);
+    explicit String(const char *x, unsigned int length);
 
     const char *value() {return _value;}
     unsigned int length() const {return _length;}

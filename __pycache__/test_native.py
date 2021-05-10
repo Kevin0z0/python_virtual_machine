@@ -1,3 +1,7 @@
-a = ["abcdefg", "2", 1]
+s = "hello"
+print s
 
-print len(a)
+def pyLen(o):
+	return len(o)
+	
+print pyLen(s)

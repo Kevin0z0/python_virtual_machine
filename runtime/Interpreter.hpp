@@ -18,9 +18,9 @@ public:
     void buildFrame(Object *callable, ObjList args);
 
 private:
-    FrameObject *_frame{};
-    Object      *_retValue{};
-    Map<Object *, Object *> *_builtins;
+    Object                  *_retValue {};
+    FrameObject             *_frame    {};
+    Map<Object *, Object *> *_builtins {};
 };
 
 class Block{
@@ -30,12 +30,12 @@ public:
     unsigned int  _target;
 
     explicit Block(unsigned char bType = 0, unsigned int bTarget = 0, int bLevel = 0):
-        _type(bType),
-        _target(bTarget),
-        _level(bLevel){}
+        _type   (bType),
+        _target (bTarget),
+        _level  (bLevel) {}
 
     Block(const Block& b) {
-        _type = b._type;
+        _type   = b._type;
         _level  = b._level;
         _target = b._target;
     }

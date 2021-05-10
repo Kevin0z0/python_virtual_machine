@@ -3,6 +3,7 @@
 //
 
 #include "FunctionObject.hpp"
+#include "Universe.hpp"
 
 FunctionKlass *FunctionKlass::instance = nullptr;
 FunctionKlass::FunctionKlass() = default;
@@ -34,6 +35,7 @@ NativeFunctionKlass *NativeFunctionKlass::getInstance() {
         instance = new NativeFunctionKlass();
     return instance;
 }
+
 
 /**
  * FunctionObject
@@ -83,8 +85,60 @@ Object *FunctionObject::call(ObjList args) {
 
 
 /**
+ * MethodKlass
+ */
+
+MethodKlass *MethodKlass::instance = nullptr;
+MethodKlass *MethodKlass::getInstance() {
+    if(instance == nullptr)
+        instance = new MethodKlass();
+    return instance;
+}
+MethodKlass::MethodKlass() {
+    setKlassDict(new Dict());
+}
+
+bool MethodObject::isFunction(Object *x) {
+    Klass* k = x->klass();
+    if (k == (Klass *) FunctionKlass::getInstance())
+        return true;
+
+    while (k->super() != nullptr) {
+        k = k->super();
+        if (k == (Klass*) FunctionKlass::getInstance())
+            return true;
+    }
+    return false;
+}
+
+/**
  * Native Functions
  */
 Object* len(ObjList args){
     return args->get(0)->len();
 }
+
+Object* stringUpper(ObjList args){
+    Object *arg0 = args->get(0);
+    assert(arg0->klass() == StringKlass::getInstance());
+
+    auto strObj = (String *)arg0;
+    auto length = strObj->length();
+    if(length == 0) return Universe::None;
+
+    char *v = new char[length];
+    char c;
+
+    for(unsigned int i = 0; i < length; i++ ){
+        c = strObj->value()[i];
+        if(c > 'a' && c <='z')
+            v[i] = c - 0x20;
+        else
+            v[i] = c;
+    }
+
+    auto *s = new String(v, length);
+    delete [] v;
+    return s;
+}
+

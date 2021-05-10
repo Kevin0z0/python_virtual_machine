@@ -2,6 +2,8 @@
 // Created by zkw on 2021-04-10.
 //
 
+#include <runtime/Universe.hpp>
+#include "runtime/FunctionObject.hpp"
 #include "Object.hpp"
 ObjectKlass *ObjectKlass::instance = nullptr;
 
@@ -75,6 +77,18 @@ Object *Object::contains(Object *x) {
 
 Object *Object::len() {
     return klass()->len(this);
+}
+
+Object *Object::getAttr(Object *x) {
+    Object *result = Universe::None;
+    result = klass()->klassDict()->get(x);
+
+    if(result == Universe::None)
+        return result;
+    if(MethodObject::isFunction(result)){
+        result = new MethodObject((FunctionObject *)result, this);
+    }
+    return result;
 }
 
 

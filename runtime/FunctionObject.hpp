@@ -17,7 +17,6 @@ private:
 
 public:
     static FunctionKlass *getInstance();
-
     void print(Object *obj) override;
 };
 
@@ -28,14 +27,17 @@ class NativeFunctionKlass : public Klass{
 private:
     NativeFunctionKlass();
     static NativeFunctionKlass *instance;
-
 public:
     static NativeFunctionKlass *getInstance();
 };
 
-Object* len(ObjList args);
+
+Object* len        (ObjList args);
+Object* stringUpper(ObjList args);
 
 typedef Object* (*NativeFuncPointer)(ObjList args);
+
+
 
 /**
  * FunctionObject
@@ -68,6 +70,44 @@ public:
     }
     void setDefault(ObjList defaults);
     ObjList defaults() { return _defaults; }
+};
+
+/**
+ * MethodKlass
+ */
+class MethodKlass : public Klass{
+private:
+    MethodKlass();
+    static MethodKlass *instance;
+
+public:
+    static MethodKlass *getInstance();
+};
+
+/**
+ * MethodObject
+ */
+class MethodObject : public Object{
+    friend class MethodKlass;
+
+private:
+    Object *_owner{};
+    FunctionObject *_func{};
+
+public:
+    explicit MethodObject(FunctionObject *func) : _owner(nullptr), _func(func){
+        setKlass(MethodKlass::getInstance());
+    }
+
+    explicit MethodObject(FunctionObject *func, Object *owner) : _owner(owner), _func(func){
+        setKlass(MethodKlass::getInstance());
+    }
+
+    void           setOwner(Object *x) { _owner = x;    }
+    Object         *owner()            { return _owner; }
+    FunctionObject *func()             { return _func;  }
+
+    static bool isFunction (Object* x);
 };
 
 

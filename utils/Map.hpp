@@ -38,4 +38,7 @@ public:
     MapEntry<K, V> *entries(){ return _entries; }
 };
 
+class Object;
+typedef Map<Object*, Object*> Dict;
+
 #endif //CPP_MAP_HPP

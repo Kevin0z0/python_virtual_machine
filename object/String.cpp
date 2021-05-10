@@ -14,9 +14,9 @@ StringKlass *StringKlass::getInstance() {
     return instance;
 }
 
-String::String(const char *x, const int length): _length(length) {
+String::String(const char *x, const unsigned int length): _length(length) {
     _value = new char[_length];
-    for(int i = 0; i < length; i++){
+    for(unsigned int i = 0; i < length; i++){
         _value[i] = x[i];
     }
     setKlass(StringKlass::getInstance());

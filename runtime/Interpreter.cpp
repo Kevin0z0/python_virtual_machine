@@ -35,6 +35,13 @@ void Interpreter::buildFrame(Object *callable, ObjList args) {
     if(callable->klass() == NativeFunctionKlass::getInstance()){
         PUSH(((FunctionObject *)callable)->call(args));
     }
+    else if(callable->klass() == MethodKlass::getInstance()){
+        auto *method = (MethodObject *) callable;
+        if(!args)
+            args = new ArrayList<Object *>(1);
+        args->insert(0, method->owner());
+        buildFrame(method->func(), args);
+    }
     else if(callable->klass() == FunctionKlass::getInstance()){
         auto *frame = new FrameObject((FunctionObject *)callable, args);
         frame->setSender(_frame);
@@ -222,7 +229,10 @@ void Interpreter::evalFrame() {
                 _frame->globals()->set(_frame->names()->get(opArg),POP());
                 break;
             case ByteCode::LOAD_GLOBAL:
-                PUSH(_frame->globals()->get(_frame->names()->get(opArg)));
+                v = _frame->globals()->get(_frame->names()->get(opArg));
+                if(v == Universe::None)
+                    v = _builtins->get(_frame->names()->get(opArg));
+                PUSH(v);
                 break;
             case ByteCode::LOAD_FAST:
                 PUSH(_frame->fastLocals()->get(opArg));
@@ -233,13 +243,18 @@ void Interpreter::evalFrame() {
             case ByteCode::BUILD_LIST:
                 v = new List;
                 while(opArg--)
-                    ((List *)v)->set(opArg,POP());
+                    ((List *)v)->set(opArg, POP());
                 PUSH(v);
                 break;
             case ByteCode::BINARY_SUBSCR:
                 v = POP();
                 w = POP();
                 PUSH(w->subscr(v));
+                break;
+            case ByteCode::LOAD_ATTR:
+                v = POP();
+                w = _frame->names()->get(opArg);
+                PUSH(v->getAttr(w));
                 break;
             default:
                 printf("Error: Unrecognized byte code %d\n", opCode);

@@ -6,15 +6,25 @@
 #include "object/Integer.hpp"
 #include "runtime/Universe.hpp"
 #include <cassert>
+#include <ctime>
 
 BinaryFileParser::BinaryFileParser(BufferedInputStream *stream): fileStream(stream){}
+
+void printDate(time_t t){
+    t += 28800;
+    struct tm *p;
+    p = gmtime(&t);
+    char s[80];
+    strftime(s, 80, "%Y-%m-%d %H:%M:%S", p);
+    printf("modify date is %s\n", s);
+}
 
 CodeObject *BinaryFileParser::parse() {
     Universe::genesis();
     int magicNumber = fileStream->read_int();
     printf("magic number is 0x%x\n", magicNumber);
     int modDate = fileStream->read_int();
-    printf("modify date is %d\n", modDate);
+    printDate(modDate);
     unsigned char objectType = fileStream->read();
     if(objectType == 'c'){
         CodeObject *result = getCodeObject();

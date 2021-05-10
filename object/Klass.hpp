@@ -4,6 +4,8 @@
 
 #ifndef PYVM_KLASS_HPP
 #define PYVM_KLASS_HPP
+
+#include <utils/Map.hpp>
 #include "cstdio"
 
 class Object;
@@ -14,14 +16,19 @@ class Klass {
 private:
     String  *_name;
     Klass   *_super;
+    Dict    *_klassDict;
 public:
     Klass();
 
-    void    setSuper(Klass *x)  {_super = x;   }
-    void    setName(String *x)  {_name = x;    }
+    void setSuper(Klass  *x) { _super = x; }
+    void setName (String *x) { _name  = x; }
 
-    Klass  *super()             {return _super;}
-    String *name()              {return _name; }
+    void setKlassDict(Dict *dict) { _klassDict = dict; }
+    Dict *klassDict()             { return _klassDict; }
+
+    Klass  *super()             { return _super; }
+    String *name ()             { return _name ; }
+
 
     virtual Object *greater   (Object *x, Object *y) { return nullptr; }
     virtual Object *less      (Object *x, Object *y) { return nullptr; }

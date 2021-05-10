@@ -17,21 +17,22 @@ CodeObject::CodeObject(int argCount,
                        String *filename,
                        String *coName,
                        int lineNo,
-                       String *notable) :
-                       _argCount(argCount),
-                       _nLocals(nlocals),
-                       _stackSize(stackSize),
-                       _flag(flag),
-                       _bytecodes(bytecodes),
-                       _consts(consts),
-                       _names(names),
-                       _varNames(varNames),
-                       _freevars(freevars),
-                       _cellvars(cellvars),
-                       _filename(filename),
-                       _coName(coName),
-                       _lineNo(lineNo),
-                       _notable(notable) {}
+                       String *notable      ):
+                       _argCount  (argCount ),
+                       _nLocals   (nlocals  ),
+                       _stackSize (stackSize),
+                       _flag      (flag     ),
+                       _bytecodes (bytecodes),
+                       _consts    (consts   ),
+                       _names     (names    ),
+                       _varNames  (varNames ),
+                       _freevars  (freevars ),
+                       _cellvars  (cellvars ),
+                       _filename  (filename ),
+                       _coName    (coName   ),
+                       _lineNo    (lineNo   ),
+                       _notable   (notable  )
+                       {}
 
 void CodeObject::print() {
     printf("\n");

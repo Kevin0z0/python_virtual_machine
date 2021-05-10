@@ -4,7 +4,7 @@
 
 int main() {
     setbuf(stdout, nullptr); // debug用 把缓冲区与流相连
-    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_native.pyc)";
+    char path[] = R"(C:\Users\zkw\Desktop\python_virtual_machine\__pycache__\test_class.pyc)";
     BufferedInputStream stream(path);
     BinaryFileParser bfp(&stream);
     CodeObject *mainCode = bfp.parse();
